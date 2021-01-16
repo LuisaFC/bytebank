@@ -29,3 +29,4 @@ contCorrenteRicardo.transferir(200, conta2)
 
 console.log(contCorrenteRicardo);
 console.log(conta2);
+console.log(conta2.cliente);

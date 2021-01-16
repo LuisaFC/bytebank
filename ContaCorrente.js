@@ -1,11 +1,26 @@
+import {Cliente} from "./Cliente.js"
 
 export class ContaCorrente {
   agencia;
-  cliente;
+  _cliente;
 
+  //getters and setters
+  set cliente(novoValor){
+    if(novoValor instanceof Cliente){
+      this._cliente = novoValor
+    }
+  }
+
+  get cliente(){
+    return this._cliente
+  }
 
   //#saldo
   _saldo = 0; //deixando atributo privado
+
+  get saldo(){
+    return this._saldo
+  }
 
   // Encapsulamento
   sacar(valor){
