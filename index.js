@@ -3,30 +3,17 @@
 import {Cliente} from "./Cliente.js"
 import {ContaCorrente} from "./ContaCorrente.js"
 
-//Criando novo cliente(objeto) a partir do molde(classe)
-const cliente1 = new Cliente(); // instancia da classe cliente, usando o new
-const cliente2 = new Cliente(); // instancia da classe cliente
+const cliente1 = new Cliente("Ricardo", 11122233309);
+const cliente2 = new Cliente("Alice", 88822233309)
+const contaCorrenteRicardo = new ContaCorrente(1001, cliente1);
+contaCorrenteRicardo.depositar(500);
 
-//Add info aos atributos de cliente
-cliente1.nome = "Ricardo";
-cliente1.cpf = 11122233309;
+const conta2 = new ContaCorrente(102, cliente2);
 
-cliente2.nome = "Alice";
-cliente2.cpf = 88822233309;
+let valor = 200;
+contaCorrenteRicardo.transferir(valor, conta2);
 
-
-const contCorrenteRicardo = new ContaCorrente();
-contCorrenteRicardo.agencia = 1001
-contCorrenteRicardo.cliente = cliente1
-contCorrenteRicardo.depositar(500)
-
-const conta2 = new ContaCorrente();
-conta2.cliente = cliente2;
-conta2.agencia = 103
-
-contCorrenteRicardo.transferir(200, conta2)
-
-
-console.log(contCorrenteRicardo);
+console.log(ContaCorrente.numeroDeContas);  
+console.log(contaCorrenteRicardo);
 console.log(conta2);
 console.log(conta2.cliente);
