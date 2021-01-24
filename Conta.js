@@ -6,9 +6,18 @@ export class Conta{
     this._agencia = agencia 
   }
 
+  get cliente(){
+    return this._cliente
+  }
+
+  get saldo(){
+    return this._saldo
+  }
+
   // Encapsulamento
   sacar(valor) {
-    taxa = 1.1 * valor
+    let taxa = 1
+    const valorSacado = taxa * valor
     if (this._saldo >= valor) {
       this._saldo -= valor;
       return valor;
